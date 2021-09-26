@@ -11,5 +11,6 @@
 	"mobile": {
 		"module": false,
 		"window": false
-	}
+	},
+	"config": {}
 }
