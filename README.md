@@ -1,1 +1,1 @@
-lumen-module-emptyModel
+# LUMEN Module Template
