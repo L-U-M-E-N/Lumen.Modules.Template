@@ -6,7 +6,7 @@ namespace Lumen.Modules.Template.Data {
     public class TemplateContext : DbContext {
         public const string SCHEMA_NAME = "Template";
 
-        public TemplateContext(DbContextOptions options) : base(options) {
+        public TemplateContext(DbContextOptions<TemplateContext> options) : base(options) {
         }
 
         public DbSet<TemplatePointInTime> Template { get; set; } = null!;
