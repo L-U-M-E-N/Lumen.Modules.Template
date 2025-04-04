@@ -18,10 +18,7 @@ namespace Lumen.Modules.Template.Data {
             TemplateModelBuilder.Property(x => x.Time)
                 .HasColumnType("timestamp with time zone");
 
-            TemplateModelBuilder.Property(x => x.AmountVideos)
-                .HasColumnType("integer");
-
-            TemplateModelBuilder.Property(x => x.SecondsDuration)
+            TemplateModelBuilder.Property(x => x.Value)
                 .HasColumnType("integer");
 
             TemplateModelBuilder.HasKey(x => x.Time);

@@ -1,6 +1,4 @@
 ﻿using Lumen.Modules.Sdk;
-using Lumen.Modules.Template.Business;
-using Lumen.Modules.Template.Common.Models;
 using Lumen.Modules.Template.Data;
 
 using Microsoft.EntityFrameworkCore;
@@ -12,7 +10,7 @@ namespace Lumen.Modules.Template.Module {
             return Task.CompletedTask;
         }
 
-        public override async Task RunAsync(LumenModuleRunsOnFlag currentEnv) {
+        public override async Task RunAsync(LumenModuleRunsOnFlag currentEnv, DateTime date) {
             try {
                 logger.LogTrace($"[{nameof(TemplateModule)}] Running tasks ...");
                 throw new NotImplementedException();
@@ -21,10 +19,10 @@ namespace Lumen.Modules.Template.Module {
             }
         }
 
-        public override bool ShouldRunNow(LumenModuleRunsOnFlag currentEnv) {
+        public override bool ShouldRunNow(LumenModuleRunsOnFlag currentEnv, DateTime date) {
             return currentEnv switch {
-                LumenModuleRunsOnFlag.UI => DateTime.UtcNow.Second == 0 && DateTime.UtcNow.Minute == 27,
-                LumenModuleRunsOnFlag.API => DateTime.UtcNow.Second == 0 && DateTime.UtcNow.Minute % 5 == 0,
+                LumenModuleRunsOnFlag.UI => date.Second == 0 && date.Minute == 42,
+                LumenModuleRunsOnFlag.API => date.Second == 0 && date.Minute % 5 == 0,
                 _ => false,
             };
         }
